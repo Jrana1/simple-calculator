@@ -1,48 +1,74 @@
-.container{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    width:70%;
-    margin: auto;
-background-color: black;
-    color: white;
-    grid-gap:5px;
-    padding: 10px;
-    word-wrap: break-word;
-    border-radius: 5px;
-    box-shadow: 10px 10px 30px rgb(92, 128, 205);
-}
-.screen{
-    grid-column-start: 1;
-    grid-column-end: 5;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#double{
-    grid-column-start: 1;
-    grid-column-end: 3;
-  
-   
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px auto 50px;
+    justify-content: right;
 }
-.screen{
-    height: 2.5em;
-    border:0px;
+
+.header {
     background-color: black;
-    color: white;
-    text-align: right;
-    font-size: 12px;
-    padding: 5px;
+
+    grid-column: 1/-1;
 }
-button{
-    background-color: rgba(128, 128, 128, 0.452);
-    padding: 8px;
-    border-radius: 50px;
-    border:0px;
-    color:white;
-    font-size: 20px;
+
+.body {
+    background-color: white;
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 6px;
+    padding: 7px;
 }
-.yellow{
-    background-color: orange;
-}
-.gray{
-    background-color: rgb(128, 128, 128);
+
+.body div {
+    background-color: white;
+    border: 1.7px solid white;
     color: black;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+}
+
+.body div:hover {
+    background-color: gray;
+    color: white;
+}
+
+.footer {
+    background-color: black;
+    grid-column: 1/-1;
+    color: springgreen;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#output {
+    width: 100%;
+    display: block;
+    text-align: right;
+    height: 100px;
+    padding: 8px;
+    outline: none;
+    font-size: 1.5rem;
+    background: transparent;
+    border: 0px;
+    margin: 0px;
+    color: white;
+}
+
+.item-17 {
+    grid-column: 1/3;
 }
