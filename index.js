@@ -37,13 +37,20 @@ function calculation(array) {
         }
     }
 }
-let box = [];
+
 let screenField = document.getElementById("output");
 let equalCount = 1;
 document.getElementById("container").addEventListener("click", (event) => {
+    let msg = document.getElementById("msg");
+    msg.innerText = "";
     screenField.style.textAlign = "right";
     screenField.style.fontSize = "20px";
     let currentValue = event.target.innerText;
+    if (currentValue == ',' || currentValue == '%' || currentValue == "+/-") {
+        msg.innerText = "Hey!!! Please have some patience. We are still working on it...";
+        document.getElementById("foot").style.flexDirection = "column";
+        return;
+    }
     if (currentValue === 'C') {
         screenField.value = "";
     }
